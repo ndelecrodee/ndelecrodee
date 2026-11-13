@@ -1,9 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220" role="img" aria-label="Banner do perfil">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220" role="img" aria-label="Nicolas Delecrode, Desenvolvedor Python · Automação e dados">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0d1117"/>
       <stop offset="0.6" stop-color="#0b3b36"/>
       <stop offset="1" stop-color="#14b8a6"/>
+    </linearGradient>
+    <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#99f6e4"/>
     </linearGradient>
     <clipPath id="clip"><rect width="900" height="220" rx="14"/></clipPath>
   </defs>
@@ -14,7 +18,11 @@
     .r3 { opacity: .5; animation: pulse 5s ease-in-out infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
     @keyframes pulse { 0%,100% { transform: scale(1); opacity: .5; } 50% { transform: scale(1.08); opacity: .2; } }
-    @media (prefers-reduced-motion: reduce) { .r1,.r2,.r3 { animation: none; } }
+    .in1 { animation: in 1s ease-out both; }
+    .in2 { animation: in 1s .2s ease-out both; }
+    .in3 { animation: in 1s .4s ease-out both; }
+    @keyframes in { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: translateX(0); } }
+    @media (prefers-reduced-motion: reduce) { .r1,.r2,.r3,.in1,.in2,.in3 { animation: none; } }
   </style>
   <g clip-path="url(#clip)">
     <rect width="900" height="220" fill="url(#bg)"/>
@@ -22,5 +30,10 @@
     <circle class="ring r1" cx="760" cy="110" r="150" stroke-dasharray="3 9"/>
     <circle class="ring r2" cx="760" cy="110" r="110" stroke-dasharray="14 10"/>
     <circle class="ring r3" cx="760" cy="110" r="70"/>
+  </g>
+  <g font-family="'Segoe UI',-apple-system,Helvetica,Arial,sans-serif">
+    <text class="in1" x="56" y="82" font-size="15" letter-spacing="3" fill="#99f6e4">SÃO PAULO, SP</text>
+    <text class="in2" x="56" y="132" font-size="44" font-weight="700" fill="url(#name)">Nicolas Delecrode</text>
+    <text class="in3" x="56" y="166" font-size="20" fill="#d1faf5">Desenvolvedor Python · Automação e dados</text>
   </g>
 </svg>
